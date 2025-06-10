@@ -1,0 +1,22 @@
+.home-container {
+    background-color: #f5fff0;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav a {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #90E05E;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    background-color: #7bc84b;
+  }
+  

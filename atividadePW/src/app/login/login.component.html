@@ -1,31 +1,13 @@
-<form (submit)="onSubmit()" [formGroup]="login">
-  <div>
-    <label>Nome:</label>
-    <input formControlName="nome"/>
-    @if (login.get('nome')?.touched && login.get('nome')?.invalid){
-      <div>
-        @if(login.get('nome')?.errors?.['required']){
-          <small>Nome obrigatório !!</small>
-        }
-        @if(login.get('nome')?.errors?.['minlength']){
-          <small>Nome com no minimo 3 letras !!</small>
-        }
-      </div>
-    }
-  </div>
+<div class="login-container" role="main">
+  <img src="assets/logo.png" alt="Logo da Aplicação" class="logo" />
+  <form (ngSubmit)="onLogin()" aria-label="Formulário de Login">
+    <label for="user">Email ou Usuário</label>
+    <input id="user" type="text" [(ngModel)]="user" name="user" required />
 
-  <div>
-    <label>Email:</label>
-    <input formControlName="email"/>
-    @if (login.get('email')?.touched && login.get('email')?.invalid){
-      <div>
-        @if(login.get('email')?.errors?.['required']){
-          <small>Email obrigatório !!</small>
-        }
-        @if(login.get('email')?.errors?.['email']){
-          <small>Email inválido !!</small>
-        }
-      </div>
-    }
+    <label for="password">Senha</label>
+    <input id="password" type="password" [(ngModel)]="password" name="password" required />
 
-  </div>
+    <button type="submit">Entrar</button>
+    <a routerLink="/home" aria-label="Criar conta">Criar conta</a>
+  </form>
+</div>

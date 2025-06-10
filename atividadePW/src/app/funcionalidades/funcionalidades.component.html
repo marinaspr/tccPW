@@ -1,33 +1,45 @@
-<mat-card class="rotacao">
-  <mat-card-content>
-    <h2 class="textoprogress">Progresso de meta</h2>
+<div class="metas-container">
+  <h2>Nome da meta</h2>
+  <div class="progresso">
+    <svg viewBox="0 0 36 36" class="progress-circle">
+      <path
+        class="circle-bg"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"
+        fill="none"
+        stroke="#eee"
+        stroke-width="3"
+      />
+      <path
+        class="circle"
+        stroke="#0f9d58"
+        stroke-width="3"
+        stroke-dasharray="63, 100"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"
+        fill="none"
+      />
+    </svg>
+    <p>63%</p>
+  </div>
 
-    <section class="section">
-      <label class="margin">Mode:</label>
-      <mat-radio-group [(ngModel)]="mode">
-        <mat-radio-button class="margin" value="determinate">
-          Determinate
-        </mat-radio-button>
-      </mat-radio-group>
-    </section>
-      <section class="section">
-        <label class="margin">Progress:</label>
-        <mat-slider class="margin">
-          <input type="range" [(ngModel)]="value" matSliderThumb>
-        </mat-slider>
-      </section>
+  <div class="calendario">
+    <p>Junho 2024</p>
+    <!-- Calendário simples -->
+    <div class="dias">
+      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+      <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+      <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+      <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+      <span>29</span><span>30</span>
+    </div>
+  </div>
 
-  </mat-card-content>
-</mat-card>
+  <p class="descricao">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
 
-<mat-card class="card">
-  <mat-card-content>
-    <h2 class="textoprogress">Result</h2>
-
-    <mat-progress-spinner
-        class="margin"
-        [mode]="mode"
-        [value]="value">
-    </mat-progress-spinner>
-  </mat-card-content>
-</mat-card>
+  <app-footer></app-footer>
+</div>

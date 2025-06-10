@@ -1,25 +1,21 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  login : FormGroup;
-lista_cadastro = [];
+  user = '';
+  password = '';
 
-  constructor(private fb: FormBuilder) {
-    this.login = this.fb.group({
-      nome: ['',[Validators.required, Validators.minLength(3)]],
-      email: ['',[Validators.email, Validators.required]],
-    });
+  constructor(private router: Router) {}
+
+  onLogin() {
+    // Aqui você pode adicionar lógica real de autenticação
+    console.log('Login:', this.user, this.password);
+    this.router.navigate(['/home']);
   }
-
-  onSubmit() {
-      alert('Cadastro efetuado com sucesso');
-  }
-
 }
