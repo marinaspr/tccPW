@@ -1,0 +1,31 @@
+<form (submit)="onSubmit()" [formGroup]="login">
+  <div>
+    <label>Nome:</label>
+    <input formControlName="nome"/>
+    @if (login.get('nome')?.touched && login.get('nome')?.invalid){
+      <div>
+        @if(login.get('nome')?.errors?.['required']){
+          <small>Nome obrigatório !!</small>
+        }
+        @if(login.get('nome')?.errors?.['minlength']){
+          <small>Nome com no minimo 3 letras !!</small>
+        }
+      </div>
+    }
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <input formControlName="email"/>
+    @if (login.get('email')?.touched && login.get('email')?.invalid){
+      <div>
+        @if(login.get('email')?.errors?.['required']){
+          <small>Email obrigatório !!</small>
+        }
+        @if(login.get('email')?.errors?.['email']){
+          <small>Email inválido !!</small>
+        }
+      </div>
+    }
+
+  </div>

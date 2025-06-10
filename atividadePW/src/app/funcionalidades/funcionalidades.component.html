@@ -1,0 +1,33 @@
+<mat-card class="rotacao">
+  <mat-card-content>
+    <h2 class="textoprogress">Progresso de meta</h2>
+
+    <section class="section">
+      <label class="margin">Mode:</label>
+      <mat-radio-group [(ngModel)]="mode">
+        <mat-radio-button class="margin" value="determinate">
+          Determinate
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+      <section class="section">
+        <label class="margin">Progress:</label>
+        <mat-slider class="margin">
+          <input type="range" [(ngModel)]="value" matSliderThumb>
+        </mat-slider>
+      </section>
+
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="card">
+  <mat-card-content>
+    <h2 class="textoprogress">Result</h2>
+
+    <mat-progress-spinner
+        class="margin"
+        [mode]="mode"
+        [value]="value">
+    </mat-progress-spinner>
+  </mat-card-content>
+</mat-card>
