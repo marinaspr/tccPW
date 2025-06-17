@@ -13,4 +13,8 @@ export class HomeComponent {
     // lógica para logout (limpar tokens, etc)
     this.router.navigate(['/login']);
   }
+  metas(){
+    this.router.navigate(['/metas']);
+  }
+
 }
