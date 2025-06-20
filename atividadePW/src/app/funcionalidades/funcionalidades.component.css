@@ -1,16 +1,26 @@
-metas-container {
-  background-color: #d8f0d8; /* verde claro */
-  height: 100vh;
-  padding: 20px;
+.metas-container {
+  background-color: #f5fff0;
+  min-height: 100vh;
+  padding: 40px 20px 100px; /* espaço extra para o footer */
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Título */
+.titulo-meta {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Progresso com círculo */
 .progresso {
   display: flex;
   align-items: center;
-  margin: 15px 0;
+  margin: 20px 0;
+  gap: 20px;
 }
 
 .progress-circle {
@@ -28,20 +38,32 @@ metas-container {
 }
 
 .progresso p {
-  font-size: 1.5rem;
-  margin-left: 15px;
+  font-size: 2rem;
   font-weight: bold;
+  color: #333;
 }
 
+/* Calendário */
 .calendario {
-  margin: 20px 0;
+  margin: 30px 0 20px;
   text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.calendario p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .dias {
   display: grid;
-  grid-template-columns: repeat(7, 30px);
-  gap: 5px;
+  grid-template-columns: repeat(7, 35px);
+  gap: 8px;
   justify-content: center;
 }
 
@@ -49,11 +71,61 @@ metas-container {
   background-color: #90E05E;
   color: white;
   font-weight: bold;
+  border-radius: 6px;
+  padding: 6px;
+  display: inline-block;
+  text-align: center;
 }
 
-
+/* Descrição */
 .descricao {
-  max-width: 400px;
+  max-width: 600px;
+  margin-top: 25px;
   text-align: center;
-  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .progresso p {
+    font-size: 1.5rem;
+  }
+
+  .dias {
+    grid-template-columns: repeat(7, 30px);
+    gap: 6px;
+  }
+
+  .descricao {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  .dias span {
+  background-color: #ddd;
+  color: #333;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 6px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dias span:hover {
+  background-color: #cfcfcf;
+}
+
+.dias span.concluido {
+  background-color: #90E05E;
+  color: white;
+  transform: scale(1.1);
+}
+
 }
